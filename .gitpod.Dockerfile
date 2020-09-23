@@ -2,7 +2,7 @@
 FROM debian:buster-slim as build-env
 
 RUN apt-get update \
-    && apt-get -y install curl \
+    && apt-get -y install curl make \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
