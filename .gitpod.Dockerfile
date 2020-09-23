@@ -1,4 +1,4 @@
-FROM gitpod/workspace-full
+FROM mikoto2000/toppers-kernel-build-kit:athrill-gcc-20200828
 
 USER gitpod
 
