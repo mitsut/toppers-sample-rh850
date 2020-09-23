@@ -21,6 +21,6 @@ RUN curl -L https://github.com/tmori/athrill-gcc/releases/download/v1.0/athrill-
     && tar xf athrill-gcc-package.tar.gz \
     && cd athrill-gcc-package \
     && sudo tar xf athrill-gcc.tar.gz -C / \
-    && cd / \
-    && rm -rf athrill-gcc-package \
-    && rm athrill-gcc-package.tar.gz
+    && sudo cd / \
+    && sudo rm -rf athrill-gcc-package \
+    && sudo rm athrill-gcc-package.tar.gz
