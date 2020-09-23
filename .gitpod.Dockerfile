@@ -21,3 +21,15 @@ RUN curl -L -O https://github.com/mitsut/cfg/releases/download/1.9.7/cfg-1.9.7-x
     && mv cfg /usr/local/bin/cfg \
     && rm cfg-1.9.7-x86_64-unknown-linux-gnu.tar.gz
 
+USER gitpod
+
+COPY --from=build-env \
+    /usr/local/athrill-gcc \
+    /usr/local/athrill-gcc
+
+COPY --from=build-env \
+    /usr/local/bin/cfg \
+    /usr/local/bin/cfg
+
+ENV PATH="/usr/local/athrill-gcc/bin/:${PATH}" \
+    LD_LIBRARY_PATH="/usr/local/athrill-gcc:/usr/local/athrill-gcc/lib:${LD_LIBRARY_PATH}"
