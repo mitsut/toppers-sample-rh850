@@ -1,5 +1,8 @@
 # ビルド環境を構築してビルド
-FROM debian:buster-slim as build-env
+# FROM debian:buster-slim as build-env
+FROM gitpod/workspace-full
+
+USER root
 
 RUN apt-get update \
     && apt-get -y install curl make \
