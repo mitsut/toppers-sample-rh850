@@ -11,7 +11,7 @@ USER gitpod
 #
 # More information: 
 
-RUN sudo apt-get -q update && \
+RUN sudo apt-get -q update \
     && apt-get -y install curl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
