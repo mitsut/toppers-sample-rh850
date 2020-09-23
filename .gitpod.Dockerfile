@@ -17,9 +17,9 @@ RUN sudo apt-get -q update \
     && sudo rm -rf /var/lib/apt/lists/*
 
 # athrill-gcc
-RUN curl -L https://github.com/tmori/athrill-gcc/releases/download/v1.0/athrill-gcc-package.tar.gz -O \
-    && tar xf athrill-gcc-package.tar.gz \
-    && cd athrill-gcc-package \
+RUN sudo curl -L https://github.com/tmori/athrill-gcc/releases/download/v1.0/athrill-gcc-package.tar.gz -O \
+    && sudo tar xf athrill-gcc-package.tar.gz \
+    && sudo cd athrill-gcc-package \
     && sudo tar xf athrill-gcc.tar.gz -C / \
     && sudo cd / \
     && sudo rm -rf athrill-gcc-package \
