@@ -26,5 +26,7 @@ RUN curl -L -O https://github.com/mitsut/hakoniwa/releases/download/swest22-rele
     && mv hakoniwa/athrill-target-rh850f1x /usr/local/athrill-target-rh850f1x \
     && rm -rf hakoniwa
 
+USER gitpod
+
 ENV PATH="/usr/local/athrill-gcc/bin/:${PATH}" \
     LD_LIBRARY_PATH="/usr/local/athrill-gcc:/usr/local/athrill-gcc/lib:${LD_LIBRARY_PATH}"
