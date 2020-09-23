@@ -7,7 +7,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # athrill-gcc
-RUN curl -L https://github.com/tmori/athrill-gcc/releases/download/v1.0/athrill-gcc-package.tar.gz -O \
+RUN curl -L https://github.com/toppers/athrill-gcc-v850e2m/releases/download/v1.1/athrill-gcc-package.tar.gz -O \
     && tar xf athrill-gcc-package.tar.gz \
     && cd athrill-gcc-package \
     && tar xf athrill-gcc.tar.gz -C / \
