@@ -1,9 +1,7 @@
 # ビルド環境を構築してビルド
-#FROM debian:buster-slim as build-env
+FROM debian:buster-slim as build-env
 #FROM ubuntu:18.04
-FROM gitpod/workspace-full
-
-USER root
+#FROM gitpod/workspace-full
 
 RUN apt-get update \
     && apt-get -y install curl make \
