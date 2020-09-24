@@ -29,5 +29,5 @@ RUN curl -L -O https://www.toppers.jp/download.cgi/athrill-target-rh850f1x-20200
 
 USER gitpod
 
-ENV PATH="/usr/local/athrill-gcc/bin/:${PATH}" \
+ENV PATH="/usr/local/athrill-gcc/bin/:$PATH" \
     LD_LIBRARY_PATH="/usr/local/athrill-gcc:/usr/local/athrill-gcc/lib:${LD_LIBRARY_PATH}"
