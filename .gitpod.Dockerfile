@@ -15,9 +15,9 @@ RUN apt-get update \
 USER gitpod
 
 RUN cd /home/gitpod \
-    $$ curl -L -O https://www.toppers.jp/download.cgi/athrill-target-rh850f1x-20200820.tar.gz \
+    && curl -L -O https://www.toppers.jp/download.cgi/athrill-target-rh850f1x-20200820.tar.gz \
     && tar xf athrill-target-rh850f1x-20200820.tar.gz \
-    $$ rm athrill-target-rh850f1x-20200820.tar.gz
+    && rm athrill-target-rh850f1x-20200820.tar.gz
 
 # athrill-gcc
 RUN curl -L https://github.com/toppers/athrill-gcc-v850e2m/releases/download/v1.1/athrill-gcc-package.tar.gz -O \
