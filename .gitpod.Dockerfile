@@ -1,6 +1,6 @@
 # ビルド環境を構築してビルド
-#FROM debian:buster-slim as build-env
-FROM ubuntu:18.04
+FROM debian:buster-slim as build-env
+#FROM ubuntu:18.04
 
 RUN apt-get update \
     && apt-get -y install curl make \
@@ -22,7 +22,7 @@ RUN curl -L -O https://github.com/mitsut/cfg/releases/download/1.9.7/cfg-1.9.7-x
     && mv cfg /usr/local/bin/cfg \
     && rm cfg-1.9.7-x86_64-unknown-linux-gnu.tar.gz
 
-RUN curl -L -O https://github.com/mitsut/hakoniwa/releases/download/swest22-releases/athrill-target-rh850f1x-20200820.tar.gz \
+RUN curl -L -O https://www.toppers.jp/download.cgi/athrill-target-rh850f1x-20200820.tar.gz \
     && tar xf athrill-target-rh850f1x-20200820.tar.gz \
     && mv hakoniwa/athrill-target-rh850f1x /usr/local/athrill-target-rh850f1x \
     && rm -rf hakoniwa
