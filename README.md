@@ -1,6 +1,17 @@
 # ATK2 sample program
 
-# tutorial
+Gitpodを使ってTOPPERS/ATK2のsample1を動かすためのPlayGroundSです。
+
+# Require
+- Web browser
+- Github account
+- Gitpod account
+
+
+# Tutorial
+
+## Gitpodでリポジトリのワークスペースを作成します。
+https://www.gitpod.io/#https://github.com/mitsut/toppers-sample-rh850
 
 ## Setup
 
