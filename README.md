@@ -11,6 +11,8 @@ Gitpodを使ってTOPPERS/ATK2のsample1を動かすためのPlayGroundSです�
 # Tutorial
 
 ## Gitpodでリポジトリのワークスペースを作成します。
+次のURLをクリックするとGitpodで移動し、ATK2のワークスペースを作成します。
+
 https://www.gitpod.io/#https://github.com/mitsut/toppers-sample-rh850
 
 ## Setup
