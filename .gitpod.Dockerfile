@@ -4,6 +4,7 @@
 FROM gitpod/workspace-full
 
 ENV HAKONIWA_HOME=/home/gitpod/hakoniwa
+ENV ATHRILL_GCC=${HAKONIWA_HOME}/athrill-gcc
 
 USER root
 
@@ -24,18 +25,18 @@ RUN curl -L https://github.com/toppers/athrill-gcc-v850e2m/releases/download/v1.
     && tar xf athrill-gcc-package.tar.gz \
     && cd athrill-gcc-package \
     && tar xf athrill-gcc.tar.gz \
-    && mv usr/local/athrill-gcc /home/gitpod/hakoniwa/ \
+    && mv usr/local/athrill-gcc ${HAKONIWA_HOME} \
     && cd ../ \
     && rm -rf athrill-gcc-package \
     && rm athrill-gcc-package.tar.gz
 
 # cfg
 RUN curl -L -O https://github.com/mitsut/cfg/releases/download/1.9.7/cfg-1.9.7-x86_64-unknown-linux-gnu.tar.gz \
-    && tar xf cfg-1.9.7-x86_64-unknown-linux-gnu.tar.gz \
+    && tar xf cfg-1.9.7-x86_64-unknown-linux-gnu.tar.gz -C ${HAKONIWA_HOME}/ \
     && rm cfg-1.9.7-x86_64-unknown-linux-gnu.tar.gz
 
-ENV LD_LIBRARY_PATH="${HAKONIWA_HOME}/athrill-gcc:${HAKONIWA_HOME}/lib:${LD_LIBRARY_PATH}"
+ENV LD_LIBRARY_PATH="${ATHRILL_GCC}:${ATHRILL_GCC}/lib:${LD_LIBRARY_PATH}"
 
 USER gitpod
 
-RUN echo 'export PATH=${HAKONIWA_HOME}/athrill-gcc/bin:${HAKONIWA_HOME}/athrill-target-rh850f1x/build_linux:$PATH' >>/home/gitpod/.bashrc
+RUN echo 'export PATH=${ATHRILL_GCC}/bin:${HAKONIWA_HOME}/athrill-target-rh850f1x/build_linux:$PATH' >>/home/gitpod/.bashrc
