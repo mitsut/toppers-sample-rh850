@@ -8,7 +8,7 @@ ENV HAKONIWA_HOME=/home/gitpod/hakoniwa
 USER root
 
 RUN apt-get update \
-    && apt-get -y install curl tar make \
+    && apt-get -y install curl tar gzip make \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
