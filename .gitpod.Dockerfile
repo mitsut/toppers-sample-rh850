@@ -8,11 +8,11 @@ ENV HAKONIWA_HOME=/home/gitpod/hakoniwa
 USER root
 
 RUN apt-get update \
-    && apt-get -y install curl tar gzip make \
+    && apt-get -y install curl make \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-USER gitpod
+#USER gitpod
 
 WORKDIR /home/gitpod
 
@@ -38,5 +38,7 @@ RUN curl -L -O https://github.com/mitsut/cfg/releases/download/1.9.7/cfg-1.9.7-x
     && rm cfg-1.9.7-x86_64-unknown-linux-gnu.tar.gz
 
 ENV LD_LIBRARY_PATH="${HAKONIWA_HOME}/athrill-gcc:${HAKONIWA_HOME}/lib:${LD_LIBRARY_PATH}"
+
+USER gitpod
 
 RUN echo 'export PATH=${HAKONIWA_HOME}/athrill-gcc/bin:${HAKONIWA_HOME}/athrill-target-rh850f1x/build_linux:$PATH' >>/home/gitpod/.bashrc
