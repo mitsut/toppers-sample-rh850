@@ -1,6 +1,9 @@
 # ビルド環境を構築してビルド
-FROM debian:buster-slim as build-env
+#FROM debian:buster-slim as build-env
 #FROM ubuntu:18.04
+FROM gitpod/workspace-full
+
+USER root
 
 RUN apt-get update \
     && apt-get -y install curl make \
@@ -31,4 +34,4 @@ USER gitpod
 
 ENV LD_LIBRARY_PATH="/usr/local/athrill-gcc:/usr/local/athrill-gcc/lib:${LD_LIBRARY_PATH}"
 
-RUN echo 'export PATH=/usr/local/athrill-gcc/bin:$PATH' >>~/.bashrc
+RUN echo 'export PATH=/usr/local/athrill-gcc/bin:$PATH' >>/home/gitpod/.bashrc
