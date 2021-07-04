@@ -18,6 +18,7 @@ USER gitpod
 RUN cd /home/gitpod \
     && curl -L -O https://www.toppers.jp/download.cgi/athrill-target-rh850f1x-20200820.tar.gz \
     && tar xf athrill-target-rh850f1x-20200820.tar.gz \
+    && cp ${HAKONIWA_HOME}/athrill-target-rh850f1x/build_linux/athrill2 ${HAKONIWA_HOME}/athrill/bin/linux/
     && rm athrill-target-rh850f1x-20200820.tar.gz
 
 # athrill-gcc
@@ -39,4 +40,4 @@ ENV LD_LIBRARY_PATH="${ATHRILL_GCC}:${ATHRILL_GCC}/lib:${LD_LIBRARY_PATH}"
 
 USER gitpod
 
-RUN echo 'export PATH=${ATHRILL_GCC}/bin:${HAKONIWA_HOME}/athrill-target-rh850f1x/build_linux:$PATH' >>/home/gitpod/.bashrc
+RUN echo 'export PATH=${ATHRILL_GCC}/bin:${HAKONIWA_HOME}/athrill/bin/linux:$PATH' >>/home/gitpod/.bashrc
