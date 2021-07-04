@@ -1,0 +1,11 @@
+*.o
+libkernel.a
+atk2-sc1
+atk2-sc1.*
+cfg1_out
+cfg1_out.*
+cfg2_out.*
+Os_Cfg.h
+Os_Lcfg.*
+offset.h
+Rte_Type.h
