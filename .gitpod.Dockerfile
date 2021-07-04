@@ -18,7 +18,7 @@ USER gitpod
 RUN cd /home/gitpod \
     && curl -L -O https://www.toppers.jp/download.cgi/athrill-target-rh850f1x-20200820.tar.gz \
     && tar xf athrill-target-rh850f1x-20200820.tar.gz \
-    && cp ${HAKONIWA_HOME}/athrill-target-rh850f1x/build_linux/athrill2 ${HAKONIWA_HOME}/athrill/bin/linux/
+    && cp ${HAKONIWA_HOME}/athrill-target-rh850f1x/build_linux/athrill2 ${HAKONIWA_HOME}/athrill/bin/linux/ \
     && rm athrill-target-rh850f1x-20200820.tar.gz
 
 # athrill-gcc
